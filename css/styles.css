@@ -7,7 +7,10 @@ body{
     background-size: cover;
     border: 4px solid rgba(100, 100, 100);
 
-    width: min(95vw,95vh);
+    margin-left: auto;
+    margin-right: auto;
+    width: min(80vw,80vh);
+    height: min(80vw,80vh);
 
     position: relative;
 }
@@ -17,7 +20,7 @@ body{
     display: flex;
     justify-content: space-around;
     div {
-        font-size: 5vw;
+        font-size: min(5vw,5vh);
         color: rgb(133, 47, 47);
     }
 }
@@ -101,7 +104,11 @@ body{
 
 /* GRID */
 #grille {
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
     background-color: rgba(100, 100, 100, 0.5);
     border: 1px;
     border: 1px solid #999;
