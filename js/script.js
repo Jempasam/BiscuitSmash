@@ -1,4 +1,4 @@
-import Grille from "./cookies/grille.mjs";
+import Grille from "./cookies/Grille.mjs";
 import { SwapTask } from "./tasks/SwapTask.mjs";
 
 // 1 On définit une sorte de "programme principal"
