@@ -1,0 +1,249 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+    background-image: url("../assets/images/Background@2x.png");
+    background-size: cover;
+    border: 4px solid rgba(100, 100, 100);
+
+    width: min(95vw,95vh);
+
+    position: relative;
+}
+
+#infos {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    div {
+        font-size: 5vw;
+        color: rgb(133, 47, 47);
+    }
+}
+
+/* OVERLAY */
+.overlay{
+    
+    transition: 0.5s font-size;
+    font-weight: bold;
+    color: var(--overlay-inner);
+    text-shadow:
+        -4px 4px var(--overlay-outer),
+        4px 4px var(--overlay-outer),
+        -4px -4px var(--overlay-outer),
+        4px -4px var(--overlay-outer);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: none;
+    animation: var(--overlay-time) ease-in-out 0s infinite tangle alternate !important;
+}
+
+.overlay:empty{
+    font-size: 1;
+}
+
+.overlay:not(:empty){
+    font-size: 5em;
+}
+
+.overlay-1{
+    --overlay-time: 500ms;
+    --overlay-inner: #000;
+    --overlay-outer: #fff;
+}
+
+.overlay-2{
+    --overlay-time: 350ms;
+    --overlay-inner: yellow;
+    --overlay-outer: #000;
+}
+
+.overlay-3{
+    --overlay-time: 200ms;
+    --overlay-inner: orange;
+    --overlay-outer: #000;
+}
+
+.overlay-4{
+    --overlay-time: 150ms;
+    --overlay-inner: red;
+    --overlay-outer: white;
+}
+
+.overlay-5{
+    --overlay-time: 100ms;
+    --overlay-inner: magenta;
+    --overlay-outer: white;
+}
+
+.overlay-6{
+    --overlay-time: 100ms;
+    --overlay-inner: blue;
+    --overlay-outer: white;
+}
+
+.overlay-7{
+    animation: 500ms ease 0s infinite rainbow !important;
+    --overlay-inner: #0f0;
+    --overlay-outer: #000;
+}
+
+/* */
+
+/* GRID */
+#grille {
+    width: 100%;
+    background-color: rgba(100, 100, 100, 0.5);
+    border: 1px;
+    border: 1px solid #999;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    div {
+        width: 11%;
+        height: 11%;
+        outline: 2px solid rgba(100, 100, 100, 0.5);
+        transition: 0.5s all;
+
+        &:hover {
+            background-color: yellow;
+        }
+    }
+}
+/* */
+
+/* COOKIES */
+.cookies{
+    &:not(.cookies-empty) {
+        transition: 0.3s all;
+        filter: drop-shadow(2px 2px 2px #222);
+        cursor: pointer;
+        animation: 1s linear 0s vibrate;
+    }
+
+    &:hover {
+        transform: scale(1.2, 1.2);
+        filter: drop-shadow(4px 4px 4px #222);
+    }
+
+    &.cookies-selected {
+        transform: scale(1.2, 1.2);
+        filter: drop-shadow(4px 4px 4px #222);
+    }
+    
+    &.cookies-empty {
+        opacity: 0;
+    }
+    
+    &.cookies-powered{
+        animation: 1s ease-in 0s infinite rainbow !important;
+    }
+    
+    &.cookies-falling{
+        position: relative;
+        top: -100%;
+        animation: 
+        0.5s ease-in 0s infinite falling !important;
+    }
+
+    &.cookies-moved{
+        animation: 1s ease-in 0s infinite tangle !important;
+    }
+}
+/* */
+
+@keyframes falling {
+    from{
+        top: -100%;
+    }
+    to{
+        top: 0%;
+    
+    }
+}
+
+@keyframes rainbow {
+    0%, 100% {
+        filter: hue-rotate(0deg);
+        transform: scale(1, 1) translate(5%,-5%);
+    }
+
+    25% {
+        filter: hue-rotate(120deg);
+        transform: scale(1, 1) translate(5%,5%);
+    }
+
+    50% {
+        filter: hue-rotate(240deg);
+        transform: scale(1, 1) translate(-5%,5%);
+    }
+
+    75% {
+        filter: hue-rotate(360deg);
+        transform: scale(1, 1) translate(-5%,-5%);
+    }
+}
+
+@keyframes vibrate {
+    0%, 100% {
+        transform: scale(1, 1) translate(5%,-5%);
+    }
+
+    25% {
+        transform: scale(1, 1) translate(5%,5%);
+    }
+
+    50% {
+        transform: scale(1, 1) translate(-5%,5%);
+    }
+
+    75% {
+        transform: scale(1, 1) translate(-5%,-5%);
+    }
+}
+
+@keyframes tangle {
+    from {
+        transform: rotate(10deg);
+    }
+
+    to {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0.1, 0.1) rotate(0deg);
+    }
+
+    33% {
+        transform: scale(0.3, 0.3) rotate(120deg);
+    }
+
+    66% {
+        transform: scale(0.6, 0.6) rotate(240deg);
+    }
+
+    100% {
+        transform: scale(1, 1) rotate(360deg);
+    }
+    
+}
