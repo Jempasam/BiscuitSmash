@@ -1,7 +1,7 @@
 # Biscuit Smash
 Un clone de candy crush.
 
-![Demo](https://jempasam.github.io/BiscuitSmash/)
+[Demo](https://jempasam.github.io/BiscuitSmash/)
 # Alignement
 Le joueur peut déplacer un cookie à condition que cela crée un alignement correcte.
 
